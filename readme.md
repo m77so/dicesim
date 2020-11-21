@@ -4,4 +4,4 @@
 
 ６か８か１４を出したいがサイコロをいくつにすればいいかわからないときに使います
 
-https://m77so.github.io/dicesim
+https://m77so.github.io/dicesim/index.html
