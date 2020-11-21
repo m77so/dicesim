@@ -48,5 +48,10 @@ var example1 = new Vue({
         d5:function(){return f(this.checked_val.map(v=>v.num), 5)},
         d6:function(){return f(this.checked_val.map(v=>v.num), 6)},
         d8:function(){return f(this.checked_val.map(v=>v.num), 8)},
+    },
+    methods:{
+        clr: function(event){
+            this.checked_val = []
+        }
     }
   })

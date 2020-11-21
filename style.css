@@ -4,6 +4,27 @@
 ul {
   padding: 1px
 }
+#titlebar{
+  width: 100%;
+}
+h2{
+  font-size: 29px;
+}
+#clear{
+  background: #fff;
+  color: #999;
+  border-radius: 60px;
+  height: 60px;
+  width: 120px;
+  border: 2px solid #999999;
+  font-size: 21px;
+  margin-right: 10px;
+  margin-left: auto;
+  display: inline-block;
+}
+#titlebar h2{
+  display: inline-block;
+}
  /* === ボタンを表示するエリア ============================== */
 .switchArea {
   line-height    : 60px;                /* 1行の高さ          */

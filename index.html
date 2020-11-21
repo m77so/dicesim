@@ -14,7 +14,10 @@
     <body>
         <h1>🍑🎲simu</h1>
         <div id="app_main">
-            <h3>出したい目</h3>
+            <div id="titlebar">
+            <h2>出したい目</h2>
+            <button id="clear" v-on:click="clr">クリア</button>
+        </div>
             <ul id="target_numbers">
                 <li v-for="number in numbers" :key="target_numbers.num">
                     <div class="switchArea">
@@ -23,8 +26,8 @@
                     </div>
                 </li>
             </ul>
-            <h3>🎲をn個使って出せる確率
-            </h3>
+            <h2>🎲をn個使って出せる確率
+            </h2>
             <div class="result">🎲1個 {{d1}}</div>
             <div class="result">🎲2個 {{d2}}</div>
             <div class="result">🎲3個 {{d3}}</div>
