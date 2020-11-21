@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"> -->
+        <link rel="stylesheet" href="style.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    </head>
+    <body>
+        <h1>dice-simulator</h1>
+        <div id="app_main">
+            <ul id="target_numbers">
+                <li v-for="number in numbers" :key="target_numbers.num">
+                    <div class="switchArea">
+                        <input type="checkbox" v-model="checked_val" :id="number.checkbox_id" v-bind:value="number">
+                        <label :for="number.checkbox_id"><span>{{number.num}}</span></label>
+                        <div id="swImg"></div>
+                    </div>
+                </li>
+            </ul>
+            <span>{{checked_val}}</span>
+        </div>
+
+<div id="app-1">{{ message }}</div>  <!-- {{ message }} が Vueデータに置換される -->
+
+<script>
+var app1 = new Vue({
+  el: '#app-1',                        /* #app-1 要素に対して Vue を適用する */
+  data: { message: 'Hello world!' }    /* message という名前のデータを定義する */
+})
+</script>
+<script src="main.js"></script>
+
+    </body>
+</html>
