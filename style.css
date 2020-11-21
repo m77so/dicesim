@@ -1,7 +1,9 @@
 #target_numbers li{
     display: inline-block;
 }
-
+ul {
+  padding: 1px
+}
  /* === ボタンを表示するエリア ============================== */
 .switchArea {
   line-height    : 60px;                /* 1行の高さ          */
@@ -55,7 +57,7 @@
     display: inline-block;
     position       : relative;            /* 親要素が基点       */
     margin         : auto;                /* 中央寄せ           */
-    width          : 240px;               /* ボタンの横幅       */
+    width          : 180px;               /* ボタンの横幅       */
     background     : #fff;                /* デフォルト背景色   */
     margin: 2px;
     height         : 60px;                /* ボタンの高さ       */

@@ -23,8 +23,8 @@ const f = function(targets, dice_num){
     const res =  target_sum / dice_sum
     const fraction2 = new Intl.NumberFormat('ja', {
         style: 'percent',
-        minimumFractionDigits: 3,
-        maximumFractionDigits: 3,
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
       })
     return fraction2.format(res)
 }

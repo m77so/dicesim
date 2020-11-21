@@ -2,24 +2,29 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"> -->
-        <link rel="stylesheet" href="style.css">
-
-        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <meta name="viewport" content="width=480" />
+        <meta name=”twitter:card” content=”summary“ /> 
+        <meta name=”twitter:site content=”@m77_“ /> 
+        <meta name="twitter:title" content="🍑🎲simu" />
+        <meta name=”twitter:description content=”🍑の🎲で🎲をいくつ振ればいいか確率を計算します“ /> 
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+        <title>🍑🎲simu</title>
     </head>
     <body>
         <h1>🍑🎲simu</h1>
         <div id="app_main">
+            <h3>出したい目</h3>
             <ul id="target_numbers">
                 <li v-for="number in numbers" :key="target_numbers.num">
                     <div class="switchArea">
                         <input type="checkbox" v-model="checked_val" :id="number.checkbox_id" v-bind:value="number">
                         <label :for="number.checkbox_id"><span>{{number.num}}</span></label>
-                        <div id="swImg"></div>
                     </div>
                 </li>
             </ul>
+            <h3>🎲をn個使って出せる確率
+            </h3>
             <div class="result">🎲1個 {{d1}}</div>
             <div class="result">🎲2個 {{d2}}</div>
             <div class="result">🎲3個 {{d3}}</div>
