@@ -11,8 +11,9 @@
 
   position       : relative;            /* 親要素が基点       */
   margin         : auto;                /* 中央寄せ           */
-  width          : 150px;               /* ボタンの横幅       */
+  width          : 60px;               /* ボタンの横幅       */
   background     : #fff;                /* デフォルト背景色   */
+  margin: 5px;
 }
 
  /* === チェックボックス ==================================== */
@@ -36,30 +37,28 @@
 
  /* === 表示する文字（標準） ================================ */
 .switchArea label span{
-  padding        : 0 0 0 36px;          /* 表示する位置       */
   color          : #999999;             /* 文字色             */
 }
 
  /* === 表示する文字（ONのとき） ============================ */
 .switchArea  input[type="checkbox"]:checked + label span{
-  padding        : 0 36px 0 0;          /* 表示する位置       */
   color          : #78bd78;             /* 文字色             */
+  font-weight : bold;
 }
 
- /* === 丸部分のSTYLE（標準） =============================== */
-.switchArea #swImg {
-  position       : absolute;            /* 親要素からの相対位置*/
-  width          : 52px;                /* 丸の横幅           */
-  height         : 52px;                /* 丸の高さ           */
-  background     : #999999;             /* カーソルタブの背景 */
-  top            : 4px;                 /* 親要素からの位置   */
-  left           : 4px;                 /* 親要素からの位置   */
-  border-radius  : 26px;                /* 角丸               */
-  transition     : .2s;                 /* 滑らか変化         */
-}
-
- /* === 丸部分のSTYLE（ONのとき） =========================== */
-.switchArea input[type="checkbox"]:checked ~ #swImg {
-  transform      : translateX(90px);    /* 丸も右へ移動       */
-  background     : #78bd78;             /* カーソルタブの背景 */
-}
+/* == 結果を表示するエリア == */
+.result {
+    line-height    : 60px;                /* 1行の高さ          */
+    letter-spacing : 0;                   /* 文字間             */
+    text-align     : center;              /* 文字位置は中央     */
+    font-size      : 27px;                /* 文字サイズ         */
+    display: inline-block;
+    position       : relative;            /* 親要素が基点       */
+    margin         : auto;                /* 中央寄せ           */
+    width          : 240px;               /* ボタンの横幅       */
+    background     : #fff;                /* デフォルト背景色   */
+    margin: 2px;
+    height         : 60px;                /* ボタンの高さ       */
+    border         : 2px solid #999999;   /* 未選択タブのの枠線 */
+    border-radius  : 30px;                /* 角丸               */
+  }

@@ -9,7 +9,7 @@
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     </head>
     <body>
-        <h1>dice-simulator</h1>
+        <h1>🍑🎲simu</h1>
         <div id="app_main">
             <ul id="target_numbers">
                 <li v-for="number in numbers" :key="target_numbers.num">
@@ -20,17 +20,14 @@
                     </div>
                 </li>
             </ul>
-            <span>{{checked_val}}</span>
+            <div class="result">🎲1個 {{d1}}</div>
+            <div class="result">🎲2個 {{d2}}</div>
+            <div class="result">🎲3個 {{d3}}</div>
+            <div class="result">🎲4個 {{d4}}</div>
+            <div class="result">🎲5個 {{d5}}</div>
+            <div class="result">🎲6個 {{d6}}</div>
+            <div class="result">🎲8個 {{d8}}</div>
         </div>
-
-<div id="app-1">{{ message }}</div>  <!-- {{ message }} が Vueデータに置換される -->
-
-<script>
-var app1 = new Vue({
-  el: '#app-1',                        /* #app-1 要素に対して Vue を適用する */
-  data: { message: 'Hello world!' }    /* message という名前のデータを定義する */
-})
-</script>
 <script src="main.js"></script>
 
     </body>
