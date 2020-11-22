@@ -26,7 +26,7 @@ const f = function(targets, dice_num){
         minimumFractionDigits: 2,
         maximumFractionDigits: 2,
       })
-    return fraction2.format(res)
+    return target_sum===dice_sum?'100.0%':fraction2.format(res)
 }
 var example1 = new Vue({
     el: '#app_main',
