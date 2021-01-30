@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=480,user-scalable=no" />
+        <meta name=”twitter:card” content=”summary“ /> 
+        <meta name=”twitter:site content=”@m77_“ /> 
+        <meta name="twitter:title" content="random qr" />
+        <meta name=”twitter:description content=create rrandom qrcode /> 
+        <title>random qr</title>
+    </head>
+    <body>
+        <h1>Random QR</h1>
+        <div id="app_main" style='margin: 30px'>
+            <canvas id='c' width=100 height=100></canvas>
+        </div>
+        <button id='btn'>create</button>
+
+<script>
+
+const draw = ()=>{
+    const c = document.getElementById('c')
+    const SIZE = 21
+    const matrix = [] //m[y][x]
+    for (let i = 0 ; i < SIZE+2; ++i ){
+        matrix.push(new Array(SIZE+2))
+    }
+    const apply_matrix_subm = (m, sub_m, start_x, start_y) => {
+        for (let y=start_y, j=0; y < start_y + sub_m.length; ++y, ++j){
+            console.log(y, j)
+            for (let x=start_x, i=0; x<start_x + sub_m[j].length; ++x, ++i) {
+                //console.log(m)
+                m[y+1][x+1] = sub_m[j][i]
+            }
+        }
+    }
+    const finder_pattern = (m, start_x, start_y) =>{
+        apply_matrix_subm(m, [[0,0,0,0,0,0,0,0,0],[0,1,1,1,1,1,1,1,0],[0,1,0,0,0,0,0,1,0],[0,1,0,1,1,1,0,1,0],[0,1,0,1,1,1,0,1,0],[0,1,0,1,1,1,0,1,0],[0,1,0,0,0,0,0,1,0],[0,1,1,1,1,1,1,1,0],[0,0,0,0,0,0,0,0,0]], start_x-1, start_y-1)
+    }
+    for(let i=1;i<SIZE+1;++i){for(let j=1;j<SIZE+1;++j){let r = Math.random();if(r<0.5){matrix[i][j]=0}else{matrix[i][j]=1}}}
+    finder_pattern(matrix, 0, 0)
+    finder_pattern(matrix, 0, SIZE - 7)
+    finder_pattern(matrix, SIZE - 7, 0)
+    // timing_pattern_horizonal
+    console.log( [(new Array(SIZE-15)).fill(0).map((v,i)=>i%2)])
+    apply_matrix_subm(matrix, [(new Array(SIZE-15)).fill(0).map((v,i)=>i%2)], 7, 6)
+    // timing_pattern_verticle
+    apply_matrix_subm(matrix, (new Array(SIZE-15)).fill(0).map((v,i)=>[i%2]), 6,7)
+
+    if (c.getContext) {
+        const ctx = c.getContext('2d')
+        ctx.clearRect(0,0,500,500)
+        const dot = (x,y)=>{
+            ctx.fillRect(4*x, 4*y, 4,4)
+        }
+        for (let i = 0; i < SIZE+2; ++i){
+            for (let j=0; j<SIZE+2; ++j) {
+                if (matrix[i][j] == 1){
+                    dot(j, i)
+                }
+            }
+        }
+    }
+};
+
+draw();
+document.getElementById('btn').addEventListener('click', draw)
+
+
+</script>
+
+    </body>
+</html>
